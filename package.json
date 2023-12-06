@@ -1,14 +1,21 @@
 {
+  "type": "module",
   "name": "buildateam-server-app",
   "version": "1.0.0",
   "description": "product service pkg",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "borel-TG",
   "license": "ISC",
   "dependencies": {
+    "@shopify/admin-api-client": "^0.1.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
