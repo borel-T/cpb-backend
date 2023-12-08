@@ -11,7 +11,7 @@ const getAll = async (req, res) => {
     res.status(200).json({ data: products });
   } catch (error) {
     res.status(500).json({
-      message: error,
+      message: error.message,
       data: [],
     });
   }

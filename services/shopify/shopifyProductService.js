@@ -4,7 +4,7 @@ const shopifyClient = require("./shopifyClient");
 async function getAll() {
   // query
   const productQuery = `query {
-  products(first: 100) {
+  products (first:10) {
     edges {
       node {
         id
@@ -19,12 +19,10 @@ async function getAll() {
   }
   }`;
 
-  const { data, errors, extensions } = await shopifyClient.request(
-    productQuery
-  );
+  const { data, errors } = await shopifyClient.request(productQuery);
 
   if (errors) {
-    throw new Error("shopify request error");
+    throw new Error(errors.message);
   }
 
   return data;
